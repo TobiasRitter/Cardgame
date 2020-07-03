@@ -1,0 +1,12 @@
+version: '3'
+services:
+  server:
+    image: tobiasritter/cardgame_server
+    ports:
+      - "8081:8081"
+  client:
+    image: tobiasritter/cardgame_client_flutter
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
